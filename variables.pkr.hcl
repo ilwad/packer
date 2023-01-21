@@ -15,7 +15,7 @@ variable "ami_name" {
 
 variable "base_ami" {
   type    = string
-  default = "ami-01bf6235263e9b636"
+  default = "ami-0dd785336843c396a"
 }
 
 variable "subnet_id" {
