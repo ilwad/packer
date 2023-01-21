@@ -18,7 +18,7 @@ pipeline {
             steps {
         withAWS(credentials: 'packer-build') {
 
-          sh '/usr/sbin/packer build builder.pkr.hcl'
+          sh '/usr/sbin/packer build packer.json'
           }
             }
         }
