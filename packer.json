@@ -1,0 +1,69 @@
+{
+"build": {
+"name": "linux-builder",
+"source": {
+"amazon-ebs.vm": {
+"ssh_username": "ec2-user"
+}
+},
+"provisioner": [
+{
+"shell": {
+"inline": [
+"ansible-galaxy collection install community.general"
+]
+}
+},
+{
+"file": {
+"source": "/var/jenkins_home/workspace/nexus-build/nexus3-oss/files/groovy",
+"destination": "/tmp/groovy_scripts"
+}
+},
+{
+"ansible": {
+"playbook_file": "./main.yml"
+}
+}
+]
+},
+"source": {
+"amazon-ebs": {
+"vm": {
+"region": "${var.region}",
+"subnet_id": "${var.subnet_id}",
+"security_group_id": "${var.security_group_id}",
+"ami_name": "${var.ami_name}",
+"source_ami": "${var.base_ami}",
+"instance_type": "${var.instance_type}",
+"associate_public_ip_address": true
+}
+}
+},
+"variable": {
+"region": {
+"type": "string",
+"default": "eu-west-2"
+},
+"instance_type": {
+"type": "string",
+"default": "t2.medium"
+},
+"ami_name": {
+"type": "string",
+"default": "nexus-tet"
+},
+"base_ami": {
+"type": "string",
+"default": "ami-0dd785336843c396a"
+},
+"subnet_id": {
+"type": "string",
+"default": "subnet-1bd65a61"
+},
+"security_group_id": {
+"type": "string",
+"default": "sg-0fb78ff9fe25ee018"
+}
+}
+}
