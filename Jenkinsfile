@@ -9,7 +9,7 @@ pipeline {
          stage('List Files') {
             steps {
                 sh 'ls -al'
-                sh 'which packer'
+                sh 'pwd'
             }
         }
 
