@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh 'ls -al'
                 sh 'pwd'
-                sh 'id'
+                sh 'which packer'
             }
         }
 
