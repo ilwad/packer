@@ -9,7 +9,6 @@ pipeline {
          stage('List Files') {
             steps {
                 sh 'ls -al'
-                sh 'packer build .'
                 sh 'which packer'
             }
         }
