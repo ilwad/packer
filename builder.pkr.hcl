@@ -10,7 +10,7 @@ build {
   }
 
   provisioner "file" {
-    source      = "/tmp/jenkins/packer/nexus3-oss/files/groovy"
+    source      = "/var/jenkins_home/workspace/nexus-build/packer/nexus3-oss/files/groovy"
     destination = "/tmp/groovy_scripts"
   }     
 
