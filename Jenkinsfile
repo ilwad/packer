@@ -17,8 +17,11 @@ pipeline {
         stage('Build Packer') {
             steps {
         withAWS(credentials: 'packer-build') {
-
-          sh '/usr/sbin/packer build packer.json'
+        sh """
+        #!/bin/bash
+        packer init .
+        packer build -force .
+        """
           }
             }
         }
