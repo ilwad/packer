@@ -14,10 +14,7 @@ build {
     destination = "/tmp/groovy_scripts"
   }     
 
-  provisioner "ansible-local" {
+  provisioner "ansible" {
     playbook_file = "./main.yml"
-    role_paths = [
-          "nexus3-oss"
-      ]
   }
 }
