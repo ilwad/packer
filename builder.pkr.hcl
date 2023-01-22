@@ -6,9 +6,6 @@ build {
     
   }
 
-  provisioner "shell" {
-    inline = [ "ansible-galaxy collection install community.general" ]
-  }
 
   provisioner "file" {
     source      = "/var/lib/jenkins/workspace/nexus-build/nexus3-oss/files/groovy"
