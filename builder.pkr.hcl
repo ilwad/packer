@@ -17,6 +17,6 @@ build {
 
 provisioner "ansible" {
     playbook_file = "./main.yml"
-    limit = "all:!localhost"
+    extra_arguments = ["--limit localhost"]
   }
 }
