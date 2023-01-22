@@ -20,5 +20,6 @@ build {
     role_paths = [
           "nexus3-oss"
       ]
+    extra_arguments = ["--limit localhost"]
   }
 }
