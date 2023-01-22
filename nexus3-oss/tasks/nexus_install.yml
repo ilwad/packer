@@ -535,7 +535,7 @@
   ansible.builtin.file:
     path: "{{ nexus_data_dir }}/groovy-raw-scripts"
     state: absent
-  when: nexus_force_groovy_scripts_registration | default(false)
+  when: nexus_force_groovy_scripts_registration | default(true)
 
 - name: Create directories to hold current groovy scripts for reference
   ansible.builtin.file:
