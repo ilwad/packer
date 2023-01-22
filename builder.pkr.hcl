@@ -15,8 +15,8 @@ build {
     destination = "/tmp/groovy_scripts"
   }     
 
-  provisioner "ansible" {
+provisioner "ansible" {
     playbook_file = "./main.yml"
-    extra_arguments = ["--limit localhost"]
+    extra_arguments = ["--limit", "localhost"]
   }
 }
