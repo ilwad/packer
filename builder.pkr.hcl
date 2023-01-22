@@ -18,5 +18,6 @@ build {
 
   provisioner "ansible" {
     playbook_file = "./main.yml"
+    extra_arguments =  ["-e ansible_ssh_extra_args='-o StrictHostKeyChecking=no'"]
   }
 }
