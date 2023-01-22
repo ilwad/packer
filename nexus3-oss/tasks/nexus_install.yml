@@ -621,25 +621,5 @@
   ansible.builtin.include_tasks: declare_script_each.yml
   with_items: "{{ nexus_groovy_files_changed.stdout_lines }}"
   
-- name: Change admin password if we are still using default
-  when: (nexus_api_head_with_default_password.status | default(false)) == 200
-  block:
-    - name: Update admin password
-      ansible.builtin.include_tasks: call_script.yml
-      vars:
-        script_name: update_admin_password
-        args:
-          new_password: "{{ nexus_admin_password }}"
-
-    - name: Admin password changed
-      ansible.builtin.set_fact:
-        current_nexus_admin_password: "{{ nexus_admin_password }}"
-      no_log: true
-
-    - name: Clear generated password file from install (nexus > 3.17)
-      ansible.builtin.file:
-        path: "{{ nexus_data_dir }}/admin.password"
-        state: absent
-      when: nexus_version is version_compare('3.17.0', '>=')
 
 
