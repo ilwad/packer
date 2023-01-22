@@ -16,6 +16,7 @@ build {
   }     
 
 provisioner "ansible" {
-    playbook_file = ["./main.yml", "-l", "all:!localhost"] 
+    extra_arguments = ["-l", "all:!localhost"]
+    playbook_file = "./main.yml"
   }
 }
