@@ -16,7 +16,6 @@ build {
   }     
 
 provisioner "ansible" {
-    playbook_file = "./main.yml"
-    extra_options = ["--limit", "all:!localhost"]
+    playbook_file = ["./main.yml", "-l", "all:!localhost"] 
   }
 }
