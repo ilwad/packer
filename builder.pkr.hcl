@@ -16,7 +16,6 @@ build {
   }     
 
 provisioner "ansible-local" {
-  extra_arguments = ["-l", "all:!localhost"]
   playbook_file = "./main.yml"
   role_paths = [
         "nexus3-oss"
