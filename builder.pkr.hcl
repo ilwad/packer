@@ -14,7 +14,9 @@ build {
   }     
 
   provisioner "shell" {
-    inline = [ "ansible-playbook main.yml" ]
+    inline = [ "ls -al" ]
+    inline = [ "pwd" ]
+    inline = [ "id" ]
   } 
   
 }
