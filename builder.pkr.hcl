@@ -14,9 +14,7 @@ build {
   }     
 
   provisioner "shell" {
-    inline = [ "ls -al" ]
-    inline = [ "pwd" ]
-    inline = [ "id" ]
+    inline = [ "ls -al", "pwd", "id" ]
   } 
   
 }
