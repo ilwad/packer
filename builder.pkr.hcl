@@ -14,7 +14,7 @@ build {
   }     
 
   provisioner "shell" {
-    inline = [ "ansible-play main.yml" ]
+    inline = [ "ansible-playbook main.yml" ]
   } 
   
 }
