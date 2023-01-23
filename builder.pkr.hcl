@@ -19,7 +19,7 @@ build {
   }   
 
   provisioner "shell" {
-    inline = [ "cd /tmp", "ls -al", "pwd", "id", "ansible-playbook main.yml" ]
+    inline = [ "cd /tmp/nexus-build", "ls -al", "pwd", "id", "ansible-playbook main.yml" ]
   } 
   
 }
