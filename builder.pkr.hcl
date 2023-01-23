@@ -11,10 +11,15 @@ build {
   provisioner "file" {
     source      = "/var/lib/jenkins/workspace/nexus-build/nexus3-oss/files/groovy"
     destination = "/tmp/groovy_scripts"
-  }     
+  }   
+  
+  provisioner "file" {
+    source      = "/var/lib/jenkins/workspace/nexus-build"
+    destination = "/tmp"
+  }   
 
   provisioner "shell" {
-    inline = [ "ls -al", "pwd", "id" ]
+    inline = [ "cd /tmp", "ls -al", "pwd", "id", "ansible-playbook main.yml" ]
   } 
   
 }
