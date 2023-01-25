@@ -18,7 +18,6 @@ pipeline {
         withAWS(credentials: 'packer-build') {
         sh """
         #!/bin/bash
-        packer init .
         packer build -force .
         """
           }
