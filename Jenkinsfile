@@ -20,7 +20,7 @@ pipeline {
         #!/bin/bash
         ls -al
         pwd
-        packer build .
+        packer build builder.pkr.hcl
         """
           }
             }
