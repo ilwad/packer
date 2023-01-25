@@ -3,7 +3,7 @@ build {
 
   source "source.amazon-ebs.vm" {
     ssh_username = "ec2-user"
-    
+  }
   provisioner "ansible" {
     playbook_file = "./main.yml"
   }
