@@ -3,7 +3,6 @@ build {
 
   source "source.amazon-ebs.vm" {
     ssh_username = "ec2-user"
-    temporary_key_pair_type = "ed25519"
     
   }
   provisioner "shell" {
