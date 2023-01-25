@@ -18,9 +18,7 @@ pipeline {
         withAWS(credentials: 'packer-build') {
         sh """
         #!/bin/bash
-        ls -al
-        pwd
-        packer build builder.pkr.hcl
+        packer build -force .
         """
           }
             }
